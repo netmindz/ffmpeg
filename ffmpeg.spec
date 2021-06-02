@@ -66,6 +66,11 @@
 %undefine _with_smb
 %endif
 
+%if 0%{?_with_nonfree:1}
+%global _with_fdk_aac    1
+%global flavor           -nonfree
+%endif
+
 # Disable nvenc when not relevant
 %ifnarch %{cuda_arches} aarch64
 %global _without_nvenc    1
@@ -107,7 +112,7 @@ ExclusiveArch: armv7hnl
 Summary:        Digital VCR and streaming server
 Name:           ffmpeg%{?flavor}
 Version:        4.3.2
-Release:        2%{?date}%{?date:git}%{?rel}%{?dist}
+Release:        2%{?date}%{?date:git}%{?rel}%{?dist}.netmindz
 License:        %{ffmpeg_license}
 URL:            http://ffmpeg.org/
 %if 0%{?date}
