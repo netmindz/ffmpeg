@@ -1,0 +1,1 @@
+mock -v -r fedora-33-x86_64 -a http://download1.rpmfusion.org/free/fedora/releases/33/Everything/x86_64/os/ -a http://download1.rpmfusion.org/nonfree/fedora/releases/33/Everything/x86_64/os/ /home/will/rpmbuild/SRPMS/ffmpeg-4.3.2-2.fc34.netmindz.src.rpm  --with nonfree 2>&1 | tee build.log
